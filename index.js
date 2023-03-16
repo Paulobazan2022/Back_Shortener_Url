@@ -7,7 +7,7 @@ app.use(cors());
 require("dotenv").config();
 app.use(express.urlencoded({ extended: true }));
 app.use(mongoSanitize()) // se usa en req.params, req.header, req.body y req.query
-const port = process.env.PORT;
+const port = 8080;
 
 
 const client = require("./models/connection");
