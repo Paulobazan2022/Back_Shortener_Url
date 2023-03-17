@@ -14,7 +14,7 @@ const client = require("./models/connection");
 
 client();
 
-app.use("/", require("./routes"));
+app.use("/api", require("./routes"));
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
