@@ -10,7 +10,7 @@ const registerUser = async (req, res) => {
   const passwordCryp = await bcrypt.hash(password, BCRYP_SALT_RAUNDS);
 
   try {
-   const response = await UserManager.registerUser(name, username, passwordCryp);
+   const response = await UserManager.registerUser(name, username.toLowerCase(), passwordCryp);
     const token = jwt.sign({ username }, process.env.SECRET, {
       algorithm: "HS256",
       expiresIn: 30000,

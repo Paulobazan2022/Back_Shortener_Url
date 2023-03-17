@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 const signInController = async (req, res) => {
   const { username, password } = req.body;
 
-  const user = await UserManager.logInUser(username)
+  const user = await UserManager.logInUser(username.toLowerCase())
 
   if (!user) {
     res.status(401).json({ error: "Usuarios no encontrado" });
